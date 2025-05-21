@@ -1,0 +1,25 @@
+spring:
+  docker:
+    compose:
+      enabled: false
+
+  application:
+    name: Analysis
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/paperDB
+    password: 123456
+    username: postgres
+    hikari:
+      schema: pubmedpaper
+
+  batch:
+    jdbc:
+      initialize-schema: never
+    job:
+      enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
